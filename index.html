@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>eventrac API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,166 +219,214 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#organisers" class="toc-h1 toc-link" data-title="organisers">Organisers</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-all-events-for-an-organiser" class="toc-h2 toc-link" data-title="get-all-events-for-an-organiser">Get All Events for an organiser</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#events" class="toc-h1 toc-link" data-title="events">Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-future-races-for-an-event" class="toc-h2 toc-link" data-title="get-all-future-races-for-an-event">Get all future Races for an Event</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-event" class="toc-h2 toc-link" data-title="get-a-specific-event">Get a Specific Event</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#races" class="toc-h1 toc-link" data-title="races">Races</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-specific-race" class="toc-h2 toc-link" data-title="get-a-specific-race">Get a Specific Race</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#participants" class="toc-h1 toc-link" data-title="participants">Participants</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#retrieve-a-participant" class="toc-h2 toc-link" data-title="retrieve-a-participant">Retrieve a participant</a>
+                  </li>
+                  <li>
+                    <a href="#add-a-single-participant-to-a-race" class="toc-h2 toc-link" data-title="add-a-single-participant-to-a-race">Add a single Participant to a Race</a>
+                  </li>
+                  <li>
+                    <a href="#add-multiple-participants-to-race-s" class="toc-h2 toc-link" data-title="add-multiple-participants-to-race-s">Add multiple Participants to Race(s)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>This is an in development API</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>yourapikey</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>eventrac uses API keys to allow access to the API.  To receive an API key, please contact organiser.support@eventrac.co.uk</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>eventrac expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: yourapikey</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>yourapikey</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<h1 id='organisers'>Organisers</h1><h2 id='get-all-events-for-an-organiser'>Get All Events for an organiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Thames Meander"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/thames-meander"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water Ultra"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-ultra"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all events for a given organiser.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p><code>GET https://eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events</code></p>
+<h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>ORGANISER_ID</td>
+<td>The ID of the event organiser</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the event</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>name</td>
+<td>The Name of the event</td>
+</tr>
+<tr>
+<td>description</td>
+<td>A description about the event</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The URL to the eventrac landing page</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+Please email organiser.support@eventrac.co.uk for details of an organisers id
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h1 id='events'>Events</h1><h2 id='get-all-future-races-for-an-event'>Get all future Races for an Event</h2>
+<aside class="notice">
+A "future race" is considered any race with a date in in the future
+</aside>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns a JSON array of race objects:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">728</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Half Marathon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-05-12T09:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2018-05-07T23:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"participant"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">729</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Marathon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-05-12T08:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2018-05-07T23:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3800</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">190</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"participant"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/race-course-map/bewl-water-marathon-12-05-2018-08-00"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint retrieves all races (in the future) for a given event</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<p><code>GET https://eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races</code></p>
+<h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -389,38 +434,36 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>EVENT_ID</td>
+<td>The ID of the event organiser</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h3 id='response-2'>Response</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>race objects</td>
+<td>An array of race objects (See race object)</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-event'>Get a Specific Event</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/events/&lt;ID&gt;"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns a JSON event object structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
+<p>This endpoint retrieves a specific event.</p>
+
+<aside class="warning">This endpoint has not yet been implemented</aside>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p><code>GET www.eventrac.co.uk/api/v2/events/&lt;ID&gt;</code></p>
+<h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -429,13 +472,540 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>The ID of the race to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='event-object'>Event Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the event</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The Name of the event</td>
+</tr>
+</tbody></table>
+<h1 id='races'>Races</h1><h2 id='get-a-specific-race'>Get a Specific Race</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a JSON race object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">851</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Whiteley Village 10Km"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-06-10T08:00:00+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2017-06-08T12:00:00+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Whiteley Village Races"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/whiteley-races"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">1800</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"organiser"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/race-course-map/whiteley-village-races-whiteley-village-10km-10-06-2018-08-00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific race</p>
+
+<aside class="warning">Attention should be given to has_capacity and the status.  These can be considered the criteria to enable new participants to enter</aside>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;</code></p>
+<h3 id='request-parameters-4'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the race to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='race-object'>Race Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the race</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The Name of the race</td>
+</tr>
+<tr>
+<td>capacity</td>
+<td>The capacity of the race.  Once this is met <em>has_capacity</em> will be false</td>
+</tr>
+<tr>
+<td>date</td>
+<td>The date of the event in UTC</td>
+</tr>
+<tr>
+<td>closing_date</td>
+<td>The closing date of the event in UTC</td>
+</tr>
+<tr>
+<td>event</td>
+<td>The event object (see event object)</td>
+</tr>
+<tr>
+<td>has_capacity</td>
+<td>Boolean indicating if the race has capacity for new participants to enter</td>
+</tr>
+<tr>
+<td>status</td>
+<td>One of &quot;open&quot;, &quot;closed&quot;, &quot;full&quot; - &quot;open&quot; indicates that participants can enter this race.  &quot;closed&quot;, &quot;full&quot; indicates the race cannot be entered at this time</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>A fee object describing the entry price and booking fees</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>amount</strong> - the price of the race as advertised to the participant (without any booking fees)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>currency</strong> - the currnecy of any fees</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>booking_fee</strong> - the eventrac booking fee</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>booking_fee_paid_by</strong> - who pays the booking fee.  Can be either <em>organiser</em> or <em>participant</em>.  In the case of <em>participant</em>, this should be added to the amount.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>A url to the eventrac landing page for this race</td>
+</tr>
+</tbody></table>
+<h1 id='participants'>Participants</h1><h2 id='retrieve-a-participant'>Retrieve a participant</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/partcipants/&lt;ID&gt;"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a JSON race object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44287</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">756</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1986-05-04T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"5ac897c6dc7a10001596163b"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint retrieves information about a specific participant</p>
+
+<aside class="warning">For privay reasons, the participants address and contact details will not be returned</aside>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;</code></p>
+<h3 id='request-parameters-5'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of participant</td>
+</tr>
+</tbody></table>
+<h3 id='response-participant-object'>Response - Participant Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the participant</td>
+</tr>
+<tr>
+<td>race_id</td>
+<td>The ID of the race they are entered into</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>The first name of the participant</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>The last name of the participant</td>
+</tr>
+<tr>
+<td>dob</td>
+<td>The dob of the participant</td>
+</tr>
+<tr>
+<td>external_reference</td>
+<td>The reference of the external booking agent</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>The gender of the participant</td>
+</tr>
+</tbody></table>
+<h2 id='add-a-single-participant-to-a-race'>Add a single Participant to a Race</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
+  -d <span class="nv">first_name</span><span class="o">=</span><span class="s2">"Matt"</span>
+  -d <span class="nv">last_name</span><span class="o">=</span><span class="s2">"Woollard"</span>
+  -d <span class="nv">dob</span><span class="o">=</span><span class="s2">"1985-01-20"</span>
+  -d <span class="nv">gender</span><span class="o">=</span><span class="s2">"m"</span>
+  -d <span class="nv">external_reference</span><span class="o">=</span><span class="s2">"my_reference_123"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a JSON participant object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44287</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">756</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Matt"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Woollard"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1985-01-20T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"my_reference_123"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address_city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address_state"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address_country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint adds a participant to a race</p>
+
+<aside class="notice">The participants address and contact details will only be returned upon a successful response</aside>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants</code></p>
+<h3 id='response-parameters'>Response  Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>true</td>
+<td>The ID of the race to retrieve</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>true</td>
+<td>The participants first name</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>true</td>
+<td>The participants last name</td>
+</tr>
+<tr>
+<td>dob</td>
+<td>true</td>
+<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
+</tr>
+<tr>
+<td>gender</td>
+<td>true</td>
+<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
+</tr>
+<tr>
+<td>external_reference</td>
+<td>true</td>
+<td>The source booking platforms reference - Must be unique for each participant of the same race</td>
+</tr>
+<tr>
+<td>address_1</td>
+<td>false</td>
+<td>The participants address line 1</td>
+</tr>
+<tr>
+<td>address_2</td>
+<td>false</td>
+<td>The participants address line 2</td>
+</tr>
+<tr>
+<td>address_city</td>
+<td>false</td>
+<td>The participants address town/city</td>
+</tr>
+<tr>
+<td>address_zip_code</td>
+<td>false</td>
+<td>The participants address post code/zip code</td>
+</tr>
+<tr>
+<td>address_state</td>
+<td>false</td>
+<td>The participants address county/state</td>
+</tr>
+<tr>
+<td>address_country</td>
+<td>false</td>
+<td>The participants address country</td>
+</tr>
+<tr>
+<td>contact_number</td>
+<td>false</td>
+<td>The participants contact number</td>
+</tr>
+<tr>
+<td>emergency_name</td>
+<td>false</td>
+<td>The name of the person to contact in case of emergency</td>
+</tr>
+<tr>
+<td>emergency_number</td>
+<td>false</td>
+<td>The contact number of the person to contact in case of emergency</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>false</td>
+<td>A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number</td>
+</tr>
+</tbody></table>
+<h3 id='response-participant-object-2'>Response - Participant Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the participant</td>
+</tr>
+<tr>
+<td>race_id</td>
+<td>The ID of the race they are entered into</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>The first name of the participant</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>The last name of the participant</td>
+</tr>
+<tr>
+<td>dob</td>
+<td>The dob of the participant</td>
+</tr>
+<tr>
+<td>external_reference</td>
+<td>The reference of the external booking agent</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>The gender of the participant</td>
+</tr>
+<tr>
+<td>address_1</td>
+<td>The participants address line 1</td>
+</tr>
+<tr>
+<td>address_2</td>
+<td>The participants address line 2</td>
+</tr>
+<tr>
+<td>address_city</td>
+<td>The participants address town/city</td>
+</tr>
+<tr>
+<td>address_zip_code</td>
+<td>The participants address post code/zip code</td>
+</tr>
+<tr>
+<td>address_state</td>
+<td>The participants address county/state</td>
+</tr>
+<tr>
+<td>address_country</td>
+<td>The participants address country</td>
+</tr>
+<tr>
+<td>contact_number</td>
+<td>The participants contact number</td>
+</tr>
+<tr>
+<td>emergency_name</td>
+<td>The name of the person to contact in case of emergency</td>
+</tr>
+<tr>
+<td>emergency_number</td>
+<td>The contact number of the person to contact in case of emergency</td>
+</tr>
+</tbody></table>
+<h2 id='add-multiple-participants-to-race-s'>Add multiple Participants to Race(s)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/participants"</span>
+  -H <span class="s2">"Authorization: yourapikey"</span>
+  -d participants[0][first_name]<span class="o">=</span><span class="s2">"Aaron"</span>
+  -d participants[0][last_name]<span class="o">=</span><span class="s2">"Bird"</span>
+  -d participants[0][dob]<span class="o">=</span><span class="s2">"1986-04-05"</span>
+  -d participants[0][gender]<span class="o">=</span><span class="s2">"m"</span>
+  -d participants[0][external_reference]<span class="o">=</span><span class="s2">"123"</span>
+</code></pre>
+<blockquote>
+<p>The json request object should look like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"participants"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1986-04-05"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">456</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Sarah"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Harding"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"f"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1990-01-13"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The above command returns a JSON participant object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"hasErrors"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"participants"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"errors"</span><span class="p">:{</span><span class="w">
+               </span><span class="s2">"external_reference"</span><span class="p">:{</span><span class="w">
+                  </span><span class="s2">"unique"</span><span class="p">:</span><span class="s2">"The provided value is invalid"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44322</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"2018-06-15T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1222"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_state"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"links"</span><span class="p">:[</span><span class="w">
+
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds a participant to a race</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://www.eventrac.co.uk/api/v2/races/participants</code></p>
+
+<p>This endpoints expects and array of participants</p>
+<h3 id='response-parameters-2'>Response  Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>participants[0][first_name]</td>
+<td>true</td>
+<td>The participants first name</td>
+</tr>
+<tr>
+<td>participants[0][last_name]</td>
+<td>true</td>
+<td>The participants last name</td>
+</tr>
+<tr>
+<td>participants[0][dob]</td>
+<td>true</td>
+<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
+</tr>
+<tr>
+<td>participants[0][gender]</td>
+<td>true</td>
+<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
+</tr>
+<tr>
+<td>participants[0][external_reference]</td>
+<td>true</td>
+<td>The source booking platforms reference - Must be unique for each participant of the same race</td>
+</tr>
+<tr>
+<td>...</td>
+<td>false</td>
+<td>see Adding an individual participant for further options</td>
+</tr>
+</tbody></table>
+<h3 id='response-participant-object-3'>Response - Participant Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hasErrors</td>
+<td>If any of the participants could not be saved, this will hasErrors = <em>true</em></td>
+</tr>
+<tr>
+<td>participants</td>
+<td>An array of participants - See the participant response object</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">
+In the case of a 422 validation error, a reason message will also be included in the response body
+</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The eventrac API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -445,15 +1015,15 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>Bad Request -- Your request is invalid.</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>Unauthenticated -- Your API key is wrong.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- You are not allowed to access tis location.</td>
 </tr>
 <tr>
 <td>404</td>
@@ -461,27 +1031,15 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a service with an invalid method.</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>422</td>
+<td>Validation Errors -- Your request contains validation errors</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>Service Exception -- We had a problem with our server. Try again later.</td>
 </tr>
 <tr>
 <td>503</td>
@@ -493,9 +1051,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
