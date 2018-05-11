@@ -343,7 +343,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>yourapikey</code> with your personal API key.
 </aside>
-<h1 id='organisers'>Organisers</h1><h2 id='get-all-events-for-an-organiser'>Get All Events for an organiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events"</span>
+<h1 id='organisers'>Organisers</h1><h2 id='get-all-events-for-an-organiser'>Get All Events for an organiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
@@ -372,7 +372,7 @@ You must replace <code>yourapikey</code> with your personal API key.
 </span></code></pre>
 <p>This endpoint retrieves all events for a given organiser.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -417,7 +417,7 @@ Please email organiser.support@eventrac.co.uk for details of an organisers id
 <aside class="notice">
 A "future race" is considered any race with a date in in the future
 </aside>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
@@ -470,7 +470,7 @@ A "future race" is considered any race with a date in in the future
 </span></code></pre>
 <p>This endpoint retrieves all races (in the future) for a given event</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races</code></p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -507,7 +507,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="warning">This endpoint has not yet been implemented</aside>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET www.eventrac.co.uk/api/v2/events/&lt;ID&gt;</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v2/events/&lt;ID&gt;</code></p>
 <h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -664,7 +664,7 @@ A "future race" is considered any race with a date in in the future
 </span></code></pre>
 <p>This endpoint retrieves information about a specific participant</p>
 
-<aside class="warning">For privay reasons, the participants address and contact details will not be returned from this endpoint</aside>
+<aside class="warning">For privay reasons, the participant's address and contact details will not be returned from this endpoint</aside>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;</code></p>
 <h3 id='request-parameters-5'>Request Parameters</h3>
@@ -676,7 +676,7 @@ A "future race" is considered any race with a date in in the future
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of participant</td>
+<td>The ID of the participant</td>
 </tr>
 </tbody></table>
 <h3 id='response-participant-object'>Response - Participant Object</h3>
@@ -715,13 +715,10 @@ A "future race" is considered any race with a date in in the future
 <td>The gender of the participant</td>
 </tr>
 </tbody></table>
-<h2 id='add-a-single-participant-to-a-race'>Add a single Participant to a Race</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants"</span>
+<h2 id='add-a-single-participant-to-a-race'>Add a single Participant to a Race</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
-  -d <span class="nv">first_name</span><span class="o">=</span><span class="s2">"Matt"</span>
-  -d <span class="nv">last_name</span><span class="o">=</span><span class="s2">"Woollard"</span>
-  -d <span class="nv">dob</span><span class="o">=</span><span class="s2">"1985-01-20"</span>
-  -d <span class="nv">gender</span><span class="o">=</span><span class="s2">"m"</span>
-  -d <span class="nv">external_reference</span><span class="o">=</span><span class="s2">"my_reference_123"</span>
+  -d <span class="o">{</span><span class="s2">"race_id"</span>:123,<span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bird"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"123"</span><span class="o">}</span>
+
 </code></pre>
 <blockquote>
 <p>The above command returns a JSON participant object structured like this:</p>
@@ -751,7 +748,7 @@ A "future race" is considered any race with a date in in the future
 <aside class="notice">The participants address and contact details will only be returned upon a successful response</aside>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants</code></p>
-<h3 id='response-parameters'>Response  Parameters</h3>
+<h3 id='request-post-parameters'>Request (POST)  Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -762,7 +759,7 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>ID</td>
 <td>true</td>
-<td>The ID of the race to retrieve</td>
+<td>The ID of the race to add this participant to</td>
 </tr>
 <tr>
 <td>first_name</td>
@@ -837,7 +834,7 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>metadata</td>
 <td>false</td>
-<td>A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number</td>
+<td>A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..</td>
 </tr>
 </tbody></table>
 <h3 id='response-participant-object-2'>Response - Participant Object</h3>
@@ -912,13 +909,10 @@ A "future race" is considered any race with a date in in the future
 <td>The contact number of the person to contact in case of emergency</td>
 </tr>
 </tbody></table>
-<h2 id='add-multiple-participants-to-race-s'>Add multiple Participants to Race(s)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/participants"</span>
+<h2 id='add-multiple-participants-to-race-s'>Add multiple Participants to Race(s)</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.eventrac.co.uk/api/v2/participants"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
-  -d participants[0][first_name]<span class="o">=</span><span class="s2">"Aaron"</span>
-  -d participants[0][last_name]<span class="o">=</span><span class="s2">"Bird"</span>
-  -d participants[0][dob]<span class="o">=</span><span class="s2">"1986-04-05"</span>
-  -d participants[0][gender]<span class="o">=</span><span class="s2">"m"</span>
-  -d participants[0][external_reference]<span class="o">=</span><span class="s2">"123"</span>
+  -d <span class="o">{</span><span class="s2">"participants"</span>:[<span class="o">{</span><span class="s2">"race_id"</span>:123,<span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bird"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"123"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"race_id"</span>:123,<span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bird"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"123-1"</span>,<span class="s2">"address_zip_code"</span>:<span class="s2">"1234"</span>,<span class="s2">"metadata"</span>:<span class="o">{</span><span class="s2">"hello"</span>:<span class="s2">"world"</span>,<span class="s2">"another"</span>:<span class="s2">"day"</span><span class="o">}}]}</span>
+
 </code></pre>
 <blockquote>
 <p>The json request object should look like this</p>
@@ -990,7 +984,7 @@ A "future race" is considered any race with a date in in the future
 <p><code>POST https://www.eventrac.co.uk/api/v2/races/participants</code></p>
 
 <p>This endpoints expects and array of participants</p>
-<h3 id='response-parameters-2'>Response  Parameters</h3>
+<h3 id='request-post-parameters-2'>Request (POST) Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
