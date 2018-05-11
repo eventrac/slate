@@ -94,7 +94,7 @@ You must replace <code>yourapikey</code> with your personal API key.
 ## Get All Events for an organiser
 
 ```shell
-curl "https://eventrac.co.uk/api/v2/organisers/<ORGANISER_ID>/events"
+curl "https://www.eventrac.co.uk/api/v2/organisers/<ORGANISER_ID>/events"
   -H "Authorization: yourapikey"
 ```
 
@@ -127,7 +127,7 @@ This endpoint retrieves all events for a given organiser.
 
 ### HTTP Request
 
-`GET https://eventrac.co.uk/api/v2/organisers/<ORGANISER_ID>/events`
+`GET https://www.eventrac.co.uk/api/v2/organisers/<ORGANISER_ID>/events`
 
 ### Request Parameters
 
@@ -159,7 +159,7 @@ A "future race" is considered any race with a date in in the future
 
 
 ```shell
-curl "https://eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
+curl "https://www.eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
   -H "Authorization: yourapikey"
 ```
 
@@ -217,7 +217,7 @@ This endpoint retrieves all races (in the future) for a given event
 
 ### HTTP Request
 
-`GET https://eventrac.co.uk/api/v2/events/<EVENT_ID>/races`
+`GET https://www.eventrac.co.uk/api/v2/events/<EVENT_ID>/races`
 
 ### Request Parameters
 
@@ -254,7 +254,7 @@ This endpoint retrieves a specific event.
 
 ### HTTP Request
 
-`GET www.eventrac.co.uk/api/v2/events/<ID>`
+`GET https://www.eventrac.co.uk/api/v2/events/<ID>`
 
 ### Request Parameters
 
