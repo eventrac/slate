@@ -222,6 +222,9 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
+            <a href="#how-does-it-work" class="toc-h1 toc-link" data-title="how-does-it-work">How does it work?</a>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
@@ -276,8 +279,50 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.</p>
 
-<p>This is an in development API</p>
-<h1 id='authentication'>Authentication</h1>
+<p><strong>This is an in development API</strong></p>
+<h1 id='how-does-it-work'>How does it work?</h1>
+<p>This version of the eventrac API uses <a href="https://metacpan.org/pod/JSON::JSend">jSend</a> as the protocol to communicate between the client and the server
+ An example response might look like (see right).</p>
+
+<blockquote>
+<p>A typical successful response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44362</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-01-01T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-external-reference"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>A typical response with validation errors:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation failed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The provided value is invalid"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -302,7 +347,7 @@ You must replace <code>yourapikey</code> with your personal API key.
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns JSON array of events, structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
    </span><span class="p">{</span><span class="w">
@@ -392,7 +437,7 @@ A "future race" is considered any race with a date in in the future
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
          </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span><span class="w">
          </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
@@ -413,7 +458,7 @@ A "future race" is considered any race with a date in in the future
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
          </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3800</span><span class="p">,</span><span class="w">
          </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">190</span><span class="p">,</span><span class="w">
@@ -446,8 +491,8 @@ A "future race" is considered any race with a date in in the future
 </tr>
 </thead><tbody>
 <tr>
-<td>race objects</td>
-<td>An array of race objects (See race object)</td>
+<td>data</td>
+<td>An array of races (See getting an individual race)</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-event'>Get a Specific Event</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/events/&lt;ID&gt;"</span>
@@ -510,7 +555,7 @@ A "future race" is considered any race with a date in in the future
    </span><span class="p">},</span><span class="w">
    </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">
+   </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
       </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">1800</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span><span class="w">
@@ -576,8 +621,8 @@ A "future race" is considered any race with a date in in the future
 <td>One of &quot;open&quot;, &quot;closed&quot;, &quot;full&quot; - &quot;open&quot; indicates that participants can enter this race.  &quot;closed&quot;, &quot;full&quot; indicates the race cannot be entered at this time</td>
 </tr>
 <tr>
-<td>fee</td>
-<td>A fee object describing the entry price and booking fees</td>
+<td>price</td>
+<td>A price object describing the entry price and booking fees</td>
 </tr>
 <tr>
 <td></td>
@@ -619,7 +664,7 @@ A "future race" is considered any race with a date in in the future
 </span></code></pre>
 <p>This endpoint retrieves information about a specific participant</p>
 
-<aside class="warning">For privay reasons, the participants address and contact details will not be returned</aside>
+<aside class="warning">For privay reasons, the participants address and contact details will not be returned from this endpoint</aside>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;</code></p>
 <h3 id='request-parameters-5'>Request Parameters</h3>
@@ -894,7 +939,7 @@ A "future race" is considered any race with a date in in the future
          </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Harding"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"f"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1990-01-13"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1"</span><span class="w">
+         </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1222"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
