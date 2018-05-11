@@ -365,7 +365,7 @@ curl "https://www.eventrac.co.uk/api/v2/partcipants/<ID>"
 
 This endpoint retrieves information about a specific participant
 
-<aside class="warning">For privay reasons, the participants address and contact details will not be returned from this endpoint</aside>
+<aside class="warning">For privay reasons, the participant's address and contact details will not be returned from this endpoint</aside>
 
 ### HTTP Request
 
@@ -375,7 +375,7 @@ This endpoint retrieves information about a specific participant
 
 Parameter | Description
 --------- | -----------
-ID | The ID of participant
+ID | The ID of the participant
 
 ### Response - Participant Object
 
@@ -393,13 +393,10 @@ gender | The gender of the participant
 ## Add a single Participant to a Race
 
 ```shell
-curl "https://www.eventrac.co.uk/api/v2/races/<ID>/participants"
+curl -X POST "https://www.eventrac.co.uk/api/v2/races/<ID>/participants"
   -H "Authorization: yourapikey"
-  -d first_name="Matt"
-  -d last_name="Woollard"
-  -d dob="1985-01-20"
-  -d gender="m"
-  -d external_reference="my_reference_123"
+  -d {"race_id":123,"first_name":"Aaron","last_name":"Bird","gender":"m","dob":"1992-01-13","external_reference":"123"}
+
 ```
 
 
@@ -436,11 +433,11 @@ This endpoint adds a participant to a race
 
 `POST https://www.eventrac.co.uk/api/v2/races/<ID>/participants`
 
-### Response  Parameters
+### Request (POST)  Parameters
 
 Parameter | Required | Description
 --------- | ----------- | -----------
-ID | true | The ID of the race to retrieve
+ID | true | The ID of the race to add this participant to
 first_name | true | The participants first name
 last_name | true | The participants last name
 dob | true | The participants date of birth.  Should be in format **Y-m-d**
@@ -455,7 +452,7 @@ address_country | false | The participants address country
 contact_number | false | The participants contact number
 emergency_name | false | The name of the person to contact in case of emergency
 emergency_number | false | The contact number of the person to contact in case of emergency
-metadata | false | A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number
+metadata | false | A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..
 
 
 ### Response - Participant Object
@@ -482,13 +479,10 @@ emergency_number | The contact number of the person to contact in case of emerge
 ## Add multiple Participants to Race(s)
 
 ```shell
-curl "https://www.eventrac.co.uk/api/v2/participants"
+curl -X POST "https://www.eventrac.co.uk/api/v2/participants"
   -H "Authorization: yourapikey"
-  -d participants[0][first_name]="Aaron"
-  -d participants[0][last_name]="Bird"
-  -d participants[0][dob]="1986-04-05"
-  -d participants[0][gender]="m"
-  -d participants[0][external_reference]="123"
+  -d {"participants":[{"race_id":123,"first_name":"Aaron","last_name":"Bird","gender":"m","dob":"1992-01-13","external_reference":"123"},{"race_id":123,"first_name":"Aaron","last_name":"Bird","gender":"m","dob":"1992-01-13","external_reference":"123-1","address_zip_code":"1234","metadata":{"hello":"world","another":"day"}}]}
+
 ```
 
 
@@ -567,7 +561,7 @@ This endpoint adds a participant to a race
 
 This endpoints expects and array of participants
 
-### Response  Parameters
+### Request (POST) Parameters
 
 Parameter | Required | Description
 --------- | ----------- | -----------
