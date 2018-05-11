@@ -17,7 +17,53 @@ search: true
 
 Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.
 
-This is an in development API
+**This is an in development API**
+
+# How does it work?
+
+This version of the eventrac API uses [jSend](https://metacpan.org/pod/JSON::JSend) as the protocol to communicate between the client and the server
+ An example response might look like (see right).
+ 
+ > A typical successful response:
+ 
+ ```json
+ 
+{
+    "status": "success",
+    "data": {
+        "participant": {
+            "address_1": "",
+            "address_2": "",
+            "address_country": "",
+            "emergency_name": "",
+            "emergency_number": "",
+            "id": 44362,
+            "race_id": 123,
+            "first_name": "Aaron",
+            "last_name": "Bird",
+            "dob": "1992-01-01T00:00:00+00:00",
+            "external_reference": "my-external-reference",
+            "gender": "m"
+        }
+    },
+    "links": []
+}
+```
+
+> A typical response with validation errors:
+
+```json
+{
+    "status": "error",
+    "message": "Validation failed",
+    "code": 422,
+    "data": {
+        "external_reference": {
+            "unique": "The provided value is invalid"
+        }
+    }
+}
+```
 
 # Authentication
 
@@ -52,7 +98,7 @@ curl "https://eventrac.co.uk/api/v2/organisers/<ORGANISER_ID>/events"
   -H "Authorization: yourapikey"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns JSON array of events, structured like this:
 
 ```json
 [
@@ -135,7 +181,7 @@ curl "https://eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
       },
       "has_capacity":true,
       "status":"closed",
-      "fee":{
+      "price":{
          "amount":3000,
          "currency":"GBP",
          "booking_fee":150,
@@ -156,7 +202,7 @@ curl "https://eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
       },
       "has_capacity":true,
       "status":"closed",
-      "fee":{
+      "price":{
          "amount":3800,
          "currency":"GBP",
          "booking_fee":190,
@@ -183,7 +229,7 @@ EVENT_ID | The ID of the event organiser
 
 Parameter | Description
 --------- | ------- | -----------
-race objects | An array of race objects (See race object)
+data | An array of races (See getting an individual race)
 
 
 
@@ -249,7 +295,7 @@ curl "https://www.eventrac.co.uk/api/v2/races/<ID>"
    },
    "has_capacity":true,
    "status":"closed",
-   "fee":{
+   "price":{
       "amount":1800,
       "currency":"GBP",
       "booking_fee":83,
@@ -285,7 +331,7 @@ closing_date | The closing date of the event in UTC
 event | The event object (see event object)
 has_capacity | Boolean indicating if the race has capacity for new participants to enter
 status | One of "open", "closed", "full" - "open" indicates that participants can enter this race.  "closed", "full" indicates the race cannot be entered at this time
-fee | A fee object describing the entry price and booking fees
+price | A price object describing the entry price and booking fees
  | **amount** - the price of the race as advertised to the participant (without any booking fees)
  | **currency** - the currnecy of any fees
  | **booking_fee** - the eventrac booking fee
@@ -319,7 +365,7 @@ curl "https://www.eventrac.co.uk/api/v2/partcipants/<ID>"
 
 This endpoint retrieves information about a specific participant
 
-<aside class="warning">For privay reasons, the participants address and contact details will not be returned</aside>
+<aside class="warning">For privay reasons, the participants address and contact details will not be returned from this endpoint</aside>
 
 ### HTTP Request
 
@@ -465,7 +511,7 @@ curl "https://www.eventrac.co.uk/api/v2/participants"
          "last_name":"Harding",
          "gender":"f",
          "dob":"1990-01-13",
-         "external_reference":"123-1"
+         "external_reference":"123-1222"
       }
    ]
 }
