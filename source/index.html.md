@@ -17,6 +17,10 @@ search: true
 
 Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.
 
+To help with development, a collection of API calls are available in postman.  This is using our sandbox environment
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b2e5dada17d7ae157fd)
+
 **This is an in development API**
 
 # How does it work?
