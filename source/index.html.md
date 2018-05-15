@@ -285,6 +285,7 @@ id | The ID of the event
 name | The Name of the event
 description | The description of the event as set by the organiser
 url | The URL of the event
+has_future_races | Boolean indicating if this event has any races in the future
 
 # Races
 
