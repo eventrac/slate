@@ -45,8 +45,8 @@ This version of the eventrac API uses [jSend](https://metacpan.org/pod/JSON::JSe
             "race_id": 123,
             "first_name": "Aaron",
             "last_name": "Bird",
-            "dob": "1992-01-01T00:00:00+00:00",
             "email": "aaron@eventrac.co.uk",
+            "dob": "1992-01-01T00:00:00+00:00",
             "external_reference": "my-external-reference",
             "gender": "m"
         }
