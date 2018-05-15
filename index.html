@@ -279,7 +279,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.</p>
 
-<p>To help with development, a collection of API calls are available in postman.  This is using our sandbox environment</p>
+<p>To help with development, a collection of API calls are available in postman.  This is using our sandbox environment.</p>
 
 <p><a href="https://app.getpostman.com/run-collection/7b2e5dada17d7ae157fd"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
@@ -305,6 +305,7 @@
             </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
             </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-01-01T00:00:00+00:00"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-external-reference"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
@@ -358,19 +359,22 @@ You must replace <code>yourapikey</code> with your personal API key.
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Thames Meander"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/thames-meander"</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/thames-meander"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
    </span><span class="p">},</span><span class="w">
    </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
    </span><span class="p">},</span><span class="w">
    </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water Ultra"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-ultra"</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-ultra"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -412,6 +416,10 @@ You must replace <code>yourapikey</code> with your personal API key.
 <td>url</td>
 <td>The URL to the eventrac landing page</td>
 </tr>
+<tr>
+<td>has_future_races</td>
+<td>Boolean indicating if this event has any races in the future</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -432,12 +440,15 @@ A "future race" is considered any race with a date in in the future
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">728</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Half Marathon"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
       </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-05-12T09:00:00+00:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2018-05-07T23:00:00+00:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
          </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="w">
+         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
@@ -447,18 +458,21 @@ A "future race" is considered any race with a date in in the future
          </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
          </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"participant"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"</span><span class="w">
    </span><span class="p">},</span><span class="w">
    </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">729</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Marathon"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
       </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-05-12T08:00:00+00:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2018-05-07T23:00:00+00:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
          </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="w">
+         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
@@ -468,7 +482,7 @@ A "future race" is considered any race with a date in in the future
          </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">190</span><span class="p">,</span><span class="w">
          </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"participant"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/race-course-map/bewl-water-marathon-12-05-2018-08-00"</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/race-course-map/bewl-water-marathon-12-05-2018-08-00"</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -484,7 +498,7 @@ A "future race" is considered any race with a date in in the future
 </thead><tbody>
 <tr>
 <td>EVENT_ID</td>
-<td>The ID of the event organiser</td>
+<td>The ID of the event to retrieve</td>
 </tr>
 </tbody></table>
 <h3 id='response-2'>Response</h3>
@@ -521,7 +535,7 @@ A "future race" is considered any race with a date in in the future
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the race to retrieve</td>
+<td>The ID of the event to retrieve</td>
 </tr>
 </tbody></table>
 <h3 id='event-object'>Event Object</h3>
@@ -539,6 +553,14 @@ A "future race" is considered any race with a date in in the future
 <td>name</td>
 <td>The Name of the event</td>
 </tr>
+<tr>
+<td>description</td>
+<td>The description of the event as set by the organiser</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The URL of the event</td>
+</tr>
 </tbody></table>
 <h1 id='races'>Races</h1><h2 id='get-a-specific-race'>Get a Specific Race</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
@@ -550,12 +572,16 @@ A "future race" is considered any race with a date in in the future
    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">851</span><span class="p">,</span><span class="w">
    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Whiteley Village 10Km"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
    </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-06-10T08:00:00+00:00"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2017-06-08T12:00:00+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;This is my race description&lt;/p&gt;"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Whiteley Village Races"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/listed-races/whiteley-races"</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/whiteley-races"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;This is my event description&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
    </span><span class="p">},</span><span class="w">
    </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
@@ -565,7 +591,7 @@ A "future race" is considered any race with a date in in the future
       </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span><span class="w">
       </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"organiser"</span><span class="w">
    </span><span class="p">},</span><span class="w">
-   </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"/race-course-map/whiteley-village-races-whiteley-village-10km-10-06-2018-08-00"</span><span class="w">
+   </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/race-course-map/whiteley-village-races-whiteley-village-10km-10-06-2018-08-00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific race</p>
@@ -605,12 +631,20 @@ A "future race" is considered any race with a date in in the future
 <td>The capacity of the race.  Once this is met <em>has_capacity</em> will be false</td>
 </tr>
 <tr>
+<td>participant_count</td>
+<td>The number of confirmed participants.</td>
+</tr>
+<tr>
 <td>date</td>
 <td>The date of the event in UTC</td>
 </tr>
 <tr>
 <td>closing_date</td>
 <td>The closing date of the event in UTC</td>
+</tr>
+<tr>
+<td>description</td>
+<td>The race description as set by the organiser</td>
 </tr>
 <tr>
 <td>event</td>
@@ -653,7 +687,7 @@ A "future race" is considered any race with a date in in the future
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns a JSON race object structured like this:</p>
+<p>The above command returns a JSON participant object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44287</span><span class="p">,</span><span class="w">
@@ -733,6 +767,7 @@ A "future race" is considered any race with a date in in the future
    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Matt"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Woollard"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1985-01-20T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"my_reference_123"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -784,6 +819,11 @@ A "future race" is considered any race with a date in in the future
 <td>gender</td>
 <td>true</td>
 <td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
+</tr>
+<tr>
+<td>email</td>
+<td>false</td>
+<td>The participants email address</td>
 </tr>
 <tr>
 <td>external_reference</td>
@@ -877,6 +917,10 @@ A "future race" is considered any race with a date in in the future
 <td>The gender of the participant</td>
 </tr>
 <tr>
+<td>email</td>
+<td>The participants email address</td>
+</tr>
+<tr>
 <td>address_1</td>
 <td>The participants address line 1</td>
 </tr>
@@ -965,6 +1009,7 @@ A "future race" is considered any race with a date in in the future
             </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"2018-06-15T00:00:00+00:00"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1222"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
