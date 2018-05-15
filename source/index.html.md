@@ -17,7 +17,7 @@ search: true
 
 Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.
 
-To help with development, a collection of API calls are available in postman.  This is using our sandbox environment
+To help with development, a collection of API calls are available in postman.  This is using our sandbox environment.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b2e5dada17d7ae157fd)
 
@@ -46,6 +46,7 @@ This version of the eventrac API uses [jSend](https://metacpan.org/pod/JSON::JSe
             "first_name": "Aaron",
             "last_name": "Bird",
             "dob": "1992-01-01T00:00:00+00:00",
+            "email": "aaron@eventrac.co.uk",
             "external_reference": "my-external-reference",
             "gender": "m"
         }
@@ -110,19 +111,22 @@ curl "https://www.eventrac.co.uk/api/v2/organisers/<ORGANISER_ID>/events"
       "id":59,
       "name":"Thames Meander",
       "description":"<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
-      "url":"/listed-races/thames-meander"
+      "url":"https://www.eventrac.co.uk/listed-races/thames-meander",
+      "has_future_races": true
    },
    {
       "id":60,
       "name":"Bewl Water",
       "description":"<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
-      "url":"/listed-races/bewl-water-marathon-and-half-marathon"
+      "url":"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon",
+      "has_future_races": true
    },
    {
       "id":61,
       "name":"Bewl Water Ultra",
       "description":"<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
-      "url":"/listed-races/bewl-water-ultra"
+      "url":"https://www.eventrac.co.uk/listed-races/bewl-water-ultra",
+      "has_future_races": false
    }
 ]
 ```
@@ -147,6 +151,7 @@ id | The ID of the event
 name | The Name of the event
 description | A description about the event
 url | The URL to the eventrac landing page
+has_future_races | Boolean indicating if this event has any races in the future
 
 
 <aside class="notice">
@@ -176,12 +181,15 @@ curl "https://www.eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
       "id":728,
       "name":"Half Marathon",
       "capacity":500,
+      "participant_count":150,
       "date":"2018-05-12T09:00:00+00:00",
       "closing_date":"2018-05-07T23:00:00+00:00",
       "event":{
          "id":60,
          "name":"Bewl Water",
-         "url":"/listed-races/bewl-water-marathon-and-half-marathon"
+         "url":"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon",
+         "description":"<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
+         "has_future_races": true
       },
       "has_capacity":true,
       "status":"closed",
@@ -191,18 +199,21 @@ curl "https://www.eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
          "booking_fee":150,
          "booking_fee_paid_by":"participant"
       },
-      "url":"/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"
+      "url":"https://www.eventrac.co.uk/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"
    },
    {
       "id":729,
       "name":"Marathon",
       "capacity":500,
+      "participant_count":150,
       "date":"2018-05-12T08:00:00+00:00",
       "closing_date":"2018-05-07T23:00:00+00:00",
       "event":{
          "id":60,
          "name":"Bewl Water",
-         "url":"/listed-races/bewl-water-marathon-and-half-marathon"
+         "url":"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon",
+         "description":"<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
+         "has_future_races": true
       },
       "has_capacity":true,
       "status":"closed",
@@ -212,7 +223,7 @@ curl "https://www.eventrac.co.uk/api/v2/events/<EVENT_ID>/races"
          "booking_fee":190,
          "booking_fee_paid_by":"participant"
       },
-      "url":"/race-course-map/bewl-water-marathon-12-05-2018-08-00"
+      "url":"https://www.eventrac.co.uk/race-course-map/bewl-water-marathon-12-05-2018-08-00"
    }
 ]
 ```
@@ -227,7 +238,7 @@ This endpoint retrieves all races (in the future) for a given event
 
 Parameter | Description
 --------- | ------- | -----------
-EVENT_ID | The ID of the event organiser
+EVENT_ID | The ID of the event to retrieve
 
 ### Response
 
@@ -264,7 +275,7 @@ This endpoint retrieves a specific event.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the race to retrieve
+ID | The ID of the event to retrieve
 
 ### Event Object
 
@@ -272,6 +283,8 @@ Parameter | Description
 --------- | -----------
 id | The ID of the event
 name | The Name of the event
+description | The description of the event as set by the organiser
+url | The URL of the event
 
 # Races
 
@@ -290,12 +303,16 @@ curl "https://www.eventrac.co.uk/api/v2/races/<ID>"
    "id":851,
    "name":"Whiteley Village 10Km",
    "capacity":300,
+   "participant_count":150,
    "date":"2018-06-10T08:00:00+00:00",
    "closing_date":"2017-06-08T12:00:00+00:00",
+   "description": "<p>This is my race description</p>",
    "event":{
       "id":100,
       "name":"Whiteley Village Races",
-      "url":"/listed-races/whiteley-races"
+      "url":"https://www.eventrac.co.uk/listed-races/whiteley-races",
+      "description": "<p>This is my event description</p>",
+      "has_future_races": true
    },
    "has_capacity":true,
    "status":"closed",
@@ -305,7 +322,7 @@ curl "https://www.eventrac.co.uk/api/v2/races/<ID>"
       "booking_fee":83,
       "booking_fee_paid_by":"organiser"
    },
-   "url":"/race-course-map/whiteley-village-races-whiteley-village-10km-10-06-2018-08-00"
+   "url":"https://www.eventrac.co.uk/race-course-map/whiteley-village-races-whiteley-village-10km-10-06-2018-08-00"
 }
 ```
 
@@ -330,8 +347,10 @@ Parameter | Description
 id | The ID of the race
 name | The Name of the race
 capacity | The capacity of the race.  Once this is met *has_capacity* will be false
+participant_count | The number of confirmed participants.
 date | The date of the event in UTC
 closing_date | The closing date of the event in UTC
+description | The race description as set by the organiser
 event | The event object (see event object)
 has_capacity | Boolean indicating if the race has capacity for new participants to enter
 status | One of "open", "closed", "full" - "open" indicates that participants can enter this race.  "closed", "full" indicates the race cannot be entered at this time
@@ -352,7 +371,7 @@ curl "https://www.eventrac.co.uk/api/v2/partcipants/<ID>"
 ```
 
 
-> The above command returns a JSON race object structured like this:
+> The above command returns a JSON participant object structured like this:
 
 ```json
 {
@@ -413,6 +432,7 @@ curl -X POST "https://www.eventrac.co.uk/api/v2/races/<ID>/participants"
    "first_name":"Matt",
    "last_name":"Woollard",
    "dob":"1985-01-20T00:00:00+00:00",
+   "email": "aaron@eventrac.co.uk",
    "external_reference":"my_reference_123",
    "gender":"m",
    "address_1":"",
@@ -446,6 +466,7 @@ first_name | true | The participants first name
 last_name | true | The participants last name
 dob | true | The participants date of birth.  Should be in format **Y-m-d**
 gender | true | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
+email | false | The participants email address
 external_reference | true | The source booking platforms reference - Must be unique for each participant of the same race
 address_1 | false | The participants address line 1
 address_2 | false | The participants address line 2
@@ -470,6 +491,7 @@ last_name | The last name of the participant
 dob | The dob of the participant
 external_reference | The reference of the external booking agent
 gender | The gender of the participant
+email | The participants email address
 address_1 | The participants address line 1
 address_2 | The participants address line 2
 address_city | The participants address town/city
@@ -538,6 +560,7 @@ curl -X POST "https://www.eventrac.co.uk/api/v2/participants"
             "last_name":"Bird",
             "dob":"2018-06-15T00:00:00+00:00",
             "external_reference":"123-1222",
+            "email": "aaron@eventrac.co.uk",
             "gender":"m",
             "address_1":"",
             "address_2":"",
