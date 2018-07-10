@@ -607,3 +607,93 @@ Parameter |  Description
 hasErrors | If any of the participants could not be saved, this will hasErrors = *true*
 participants | An array of participants - See the participant response object
 
+## Update a participant
+
+```shell
+curl -X PUT "https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>"
+  -H "Authorization: yourapikey"
+  -d {"participant":{"first_name":"Aaron","last_name":"Tweet","gender":"f","dob":"1992-05-14","address_1":"lighthouse"}}
+
+```
+
+
+> The above command returns a JSON participant object structured like this:
+
+```json
+{
+   "id":44287,
+   "race_id":756,
+   "first_name":"Matt",
+   "last_name":"Woollard",
+   "dob":"1985-01-20T00:00:00+00:00",
+   "email": "aaron@eventrac.co.uk",
+   "external_reference":"my_reference_123",
+   "gender":"m",
+   "address_1":"",
+   "address_2":"",
+   "address_city":"",
+   "address_zip_code":"",
+   "address_state":"",
+   "address_country":"",
+   "contact_number":"",
+   "emergency_name":"",
+   "emergency_number":""
+}
+
+```
+
+This endpoint updates a participant
+
+<aside class="notice">The External Reference is required as proof of ownership.  Failure to provide an external reference will result in a 403</aside>
+
+
+### HTTP Request
+
+`PUT https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>`
+
+### Request (POST)  Parameters
+
+Parameter | Required | Description
+--------- | ----------- | -----------
+ID | true | The ID of the participant
+EXTERNAL-REFERENCE | true | The source booking platforms reference
+first_name | true | The participants first name
+last_name | true | The participants last name
+dob | true | The participants date of birth.  Should be in format **Y-m-d**
+gender | true | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
+email | false | The participants email address
+external_reference | true | The source booking platforms reference - Must be unique for each participant of the same race
+address_1 | false | The participants address line 1
+address_2 | false | The participants address line 2
+address_city | false | The participants address town/city
+address_zip_code | false | The participants address post code/zip code
+address_state | false | The participants address county/state
+address_country | false | The participants address country
+contact_number | false | The participants contact number
+emergency_name | false | The name of the person to contact in case of emergency
+emergency_number | false | The contact number of the person to contact in case of emergency
+metadata | false | A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..
+
+
+### Response - Participant Object
+
+Parameter | Description
+--------- | -----------
+id | The ID of the participant
+race_id | The ID of the race they are entered into
+first_name | The first name of the participant
+last_name | The last name of the participant
+dob | The dob of the participant
+external_reference | The reference of the external booking agent
+gender | The gender of the participant
+email | The participants email address
+address_1 | The participants address line 1
+address_2 | The participants address line 2
+address_city | The participants address town/city
+address_zip_code | The participants address post code/zip code
+address_state | The participants address county/state
+address_country | The participants address country
+contact_number | The participants contact number
+emergency_name | The name of the person to contact in case of emergency
+emergency_number | The contact number of the person to contact in case of emergency
+
