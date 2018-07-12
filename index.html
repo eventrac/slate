@@ -711,7 +711,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="warning">For privay reasons, the participant's address and contact details will not be returned from this endpoint</aside>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;/&lt;EXTERNAL-REFERENCE&gt;</code></p>
 <h3 id='request-parameters-5'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -722,6 +722,10 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>ID</td>
 <td>The ID of the participant</td>
+</tr>
+<tr>
+<td>EXTERNAL-REFERENCE</td>
+<td>The source booking platforms reference</td>
 </tr>
 </tbody></table>
 <h3 id='response-participant-object'>Response - Participant Object</h3>
@@ -808,34 +812,34 @@ A "future race" is considered any race with a date in in the future
 <td>The ID of the race to add this participant to</td>
 </tr>
 <tr>
-<td>first_name</td>
+<td>external_reference</td>
 <td>true</td>
+<td>The source booking platforms reference - Must be unique for each participant of the same race</td>
+</tr>
+<tr>
+<td>email</td>
+<td>true</td>
+<td>The participants email address</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>false</td>
 <td>The participants first name</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>true</td>
+<td>false</td>
 <td>The participants last name</td>
 </tr>
 <tr>
 <td>dob</td>
-<td>true</td>
+<td>false</td>
 <td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
 </tr>
 <tr>
 <td>gender</td>
-<td>true</td>
-<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
-</tr>
-<tr>
-<td>email</td>
 <td>false</td>
-<td>The participants email address</td>
-</tr>
-<tr>
-<td>external_reference</td>
-<td>true</td>
-<td>The source booking platforms reference - Must be unique for each participant of the same race</td>
+<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
 </tr>
 <tr>
 <td>address_1</td>
@@ -1049,29 +1053,34 @@ A "future race" is considered any race with a date in in the future
 </tr>
 </thead><tbody>
 <tr>
-<td>participants[0][first_name]</td>
+<td>participants[0][email]</td>
 <td>true</td>
-<td>The participants first name</td>
-</tr>
-<tr>
-<td>participants[0][last_name]</td>
-<td>true</td>
-<td>The participants last name</td>
-</tr>
-<tr>
-<td>participants[0][dob]</td>
-<td>true</td>
-<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
-</tr>
-<tr>
-<td>participants[0][gender]</td>
-<td>true</td>
-<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
+<td>The participants email</td>
 </tr>
 <tr>
 <td>participants[0][external_reference]</td>
 <td>true</td>
 <td>The source booking platforms reference - Must be unique for each participant of the same race</td>
+</tr>
+<tr>
+<td>participants[0][first_name]</td>
+<td>false</td>
+<td>The participants first name</td>
+</tr>
+<tr>
+<td>participants[0][last_name]</td>
+<td>false</td>
+<td>The participants last name</td>
+</tr>
+<tr>
+<td>participants[0][dob]</td>
+<td>false</td>
+<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
+</tr>
+<tr>
+<td>participants[0][gender]</td>
+<td>false</td>
+<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
 </tr>
 <tr>
 <td>...</td>
@@ -1129,7 +1138,7 @@ A "future race" is considered any race with a date in in the future
 <aside class="notice">The External Reference is required as proof of ownership.  Failure to provide an external reference will result in a 403</aside>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>PUT https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;/&lt;EXTERNAL-REFERENCE&gt;</code></p>
-<h3 id='request-post-parameters-3'>Request (POST)  Parameters</h3>
+<h3 id='request-put-parameters'>Request (PUT)  Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1148,29 +1157,29 @@ A "future race" is considered any race with a date in in the future
 <td>The source booking platforms reference</td>
 </tr>
 <tr>
+<td>email</td>
+<td>false</td>
+<td>The participants email address</td>
+</tr>
+<tr>
 <td>first_name</td>
-<td>true</td>
+<td>false</td>
 <td>The participants first name</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>true</td>
+<td>false</td>
 <td>The participants last name</td>
 </tr>
 <tr>
 <td>dob</td>
-<td>true</td>
+<td>false</td>
 <td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
 </tr>
 <tr>
 <td>gender</td>
-<td>true</td>
-<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
-</tr>
-<tr>
-<td>email</td>
 <td>false</td>
-<td>The participants email address</td>
+<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
 </tr>
 <tr>
 <td>external_reference</td>
