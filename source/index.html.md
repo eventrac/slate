@@ -393,13 +393,14 @@ This endpoint retrieves information about a specific participant
 
 ### HTTP Request
 
-`GET https://www.eventrac.co.uk/api/v2/participants/<ID>`
+`GET https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>`
 
 ### Request Parameters
 
 Parameter | Description
 --------- | -----------
 ID | The ID of the participant
+EXTERNAL-REFERENCE | The source booking platforms reference
 
 ### Response - Participant Object
 
@@ -463,12 +464,12 @@ This endpoint adds a participant to a race
 Parameter | Required | Description
 --------- | ----------- | -----------
 ID | true | The ID of the race to add this participant to
-first_name | true | The participants first name
-last_name | true | The participants last name
-dob | true | The participants date of birth.  Should be in format **Y-m-d**
-gender | true | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
-email | false | The participants email address
 external_reference | true | The source booking platforms reference - Must be unique for each participant of the same race
+email | true | The participants email address
+first_name | false | The participants first name
+last_name | false | The participants last name
+dob | false | The participants date of birth.  Should be in format **Y-m-d**
+gender | false | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
 address_1 | false | The participants address line 1
 address_2 | false | The participants address line 2
 address_city | false | The participants address town/city
@@ -593,11 +594,12 @@ This endpoints expects and array of participants
 
 Parameter | Required | Description
 --------- | ----------- | -----------
-participants[0][first_name] | true | The participants first name
-participants[0][last_name] | true | The participants last name
-participants[0][dob] | true | The participants date of birth.  Should be in format **Y-m-d**
-participants[0][gender] | true | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
+participants[0][email] | true | The participants email
 participants[0][external_reference] | true | The source booking platforms reference - Must be unique for each participant of the same race
+participants[0][first_name] | false | The participants first name
+participants[0][last_name] | false | The participants last name
+participants[0][dob] | false | The participants date of birth.  Should be in format **Y-m-d**
+participants[0][gender] | false | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
 ... | false | see Adding an individual participant for further options
 
 ### Response - Participant Object
@@ -651,17 +653,17 @@ This endpoint updates a participant
 
 `PUT https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>`
 
-### Request (POST)  Parameters
+### Request (PUT)  Parameters
 
 Parameter | Required | Description
 --------- | ----------- | -----------
 ID | true | The ID of the participant
 EXTERNAL-REFERENCE | true | The source booking platforms reference
-first_name | true | The participants first name
-last_name | true | The participants last name
-dob | true | The participants date of birth.  Should be in format **Y-m-d**
-gender | true | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
 email | false | The participants email address
+first_name | false | The participants first name
+last_name | false | The participants last name
+dob | false | The participants date of birth.  Should be in format **Y-m-d**
+gender | false | The participants gender.  Should be one of **f** (female), **m** (male), **nb** (non binary)
 external_reference | true | The source booking platforms reference - Must be unique for each participant of the same race
 address_1 | false | The participants address line 1
 address_2 | false | The participants address line 2
