@@ -367,7 +367,7 @@ url | A url to the eventrac landing page for this race
 ## Retrieve a participant
 
 ```shell
-curl "https://www.eventrac.co.uk/api/v2/partcipants/<ID>"
+curl "https://www.eventrac.co.uk/api/v2/partcipants/<ID>/<EXTERNAL-REFERENCE>"
   -H "Authorization: yourapikey"
 ```
 
