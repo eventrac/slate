@@ -588,7 +588,7 @@ This endpoint adds a participant to a race
 
 `POST https://www.eventrac.co.uk/api/v2/races/participants`
 
-This endpoints expects and array of participants
+This endpoints expects and array of participants 
 
 ### Request (POST) Parameters
 
