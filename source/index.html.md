@@ -612,7 +612,7 @@ participants | An array of participants - See the participant response object
 ## Update a participant
 
 ```shell
-curl -X PUT "https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>"
+curl -X PUT "https://www.eventrac.co.uk/api/v2/participants/<EXTERNAL-REFERENCE>"
   -H "Authorization: yourapikey"
   -d {"participant":{"first_name":"Aaron","last_name":"Tweet","gender":"f","dob":"1992-05-14","address_1":"lighthouse"}}
 
@@ -651,13 +651,12 @@ This endpoint updates a participant
 
 ### HTTP Request
 
-`PUT https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>`
+`PUT https://www.eventrac.co.uk/api/v2/participants/<EXTERNAL-REFERENCE>`
 
 ### Request (PUT)  Parameters
 
 Parameter | Required | Description
 --------- | ----------- | -----------
-ID | true | The ID of the participant
 EXTERNAL-REFERENCE | true | The source booking platforms reference
 email | false | The participants email address
 first_name | false | The participants first name
