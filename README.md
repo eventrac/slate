@@ -1,3 +1,14 @@
+Install Instructions for Ubunto:
+
+- Sudo apt-get update
+- sudo apt install ruby ruby-dev build-essential libffi-dev zlib1g-dev liblzma-dev patch
+- gem update --system
+- gem i bundler -v 1.17.3
+- bundle i
+
+Dev
+- bundle exec middleman server
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/lord/img/master/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
   <br>

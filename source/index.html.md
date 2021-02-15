@@ -15,7 +15,7 @@ search: true
 
 # Introduction
 
-Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.
+Welcome to the eventrac developer API. You can use our API to access Event/Race information and add Participants to a given Race.
 
 To help with development, a collection of API calls are available in postman.  This is using our sandbox environment.
 
@@ -23,15 +23,15 @@ To help with development, a collection of API calls are available in postman.  T
 
 **This is an in development API**
 
-# How does it work?
+# How it works
 
 This version of the eventrac API uses [jSend](https://metacpan.org/pod/JSON::JSend) as the protocol to communicate between the client and the server
  An example response might look like (see right).
- 
+
  > A typical successful response:
- 
+
  ```json
- 
+
 {
     "status": "success",
     "data": {
@@ -588,7 +588,7 @@ This endpoint adds a participant to a race
 
 `POST https://www.eventrac.co.uk/api/v2/races/participants`
 
-This endpoints expects and array of participants 
+This endpoints expects and array of participants
 
 ### Request (POST) Parameters
 
