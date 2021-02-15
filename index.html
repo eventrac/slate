@@ -222,7 +222,7 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#how-does-it-work" class="toc-h1 toc-link" data-title="how-does-it-work">How does it work?</a>
+            <a href="#how-it-works" class="toc-h1 toc-link" data-title="how-it-works">How it works</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
@@ -280,14 +280,14 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the eventrac API! You can use our API to access Event/Race information and add Participants to a given Race.</p>
+<p>Welcome to the eventrac developer API. You can use our API to access Event/Race information and add Participants to a given Race.</p>
 
 <p>To help with development, a collection of API calls are available in postman.  This is using our sandbox environment.</p>
 
 <p><a href="https://app.getpostman.com/run-collection/7b2e5dada17d7ae157fd"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <p><strong>This is an in development API</strong></p>
-<h1 id='how-does-it-work'>How does it work?</h1>
+<h1 id='how-it-works'>How it works</h1>
 <p>This version of the eventrac API uses <a href="https://metacpan.org/pod/JSON::JSend">jSend</a> as the protocol to communicate between the client and the server
  An example response might look like (see right).</p>
 
@@ -1104,7 +1104,7 @@ A "future race" is considered any race with a date in in the future
 <td>An array of participants - See the participant response object</td>
 </tr>
 </tbody></table>
-<h2 id='update-a-participant'>Update a participant</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;/&lt;EXTERNAL-REFERENCE&gt;"</span>
+<h2 id='update-a-participant'>Update a participant</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://www.eventrac.co.uk/api/v2/participants/&lt;EXTERNAL-REFERENCE&gt;"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
   -d <span class="o">{</span><span class="s2">"participant"</span>:<span class="o">{</span><span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Tweet"</span>,<span class="s2">"gender"</span>:<span class="s2">"f"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-05-14"</span>,<span class="s2">"address_1"</span>:<span class="s2">"lighthouse"</span><span class="o">}}</span>
 
@@ -1137,7 +1137,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="notice">The External Reference is required as proof of ownership.  Failure to provide an external reference will result in a 403</aside>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>PUT https://www.eventrac.co.uk/api/v2/participants/&lt;ID&gt;/&lt;EXTERNAL-REFERENCE&gt;</code></p>
+<p><code>PUT https://www.eventrac.co.uk/api/v2/participants/&lt;EXTERNAL-REFERENCE&gt;</code></p>
 <h3 id='request-put-parameters'>Request (PUT)  Parameters</h3>
 <table><thead>
 <tr>
@@ -1146,11 +1146,6 @@ A "future race" is considered any race with a date in in the future
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>ID</td>
-<td>true</td>
-<td>The ID of the participant</td>
-</tr>
 <tr>
 <td>EXTERNAL-REFERENCE</td>
 <td>true</td>
