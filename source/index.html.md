@@ -393,13 +393,12 @@ This endpoint retrieves information about a specific participant
 
 ### HTTP Request
 
-`GET https://www.eventrac.co.uk/api/v2/participants/<ID>/<EXTERNAL-REFERENCE>`
+`GET https://www.eventrac.co.uk/api/v2/participants/<EXTERNAL-REFERENCE>`
 
 ### Request Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the participant
 EXTERNAL-REFERENCE | The source booking platforms reference
 
 ### Response - Participant Object
