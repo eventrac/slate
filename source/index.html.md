@@ -114,21 +114,51 @@ curl "https://www.eventrac.co.uk/api/v3/organisers/<ORGANISER_ID>/events"
     "name": "Thames Meander",
     "description": "<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
     "url": "https://www.eventrac.co.uk/listed-races/thames-meander",
-    "has_future_races": true
+    "has_future_races": true,
+    "location": "",
+    "img_url": "http://www.eventrac.local/59.jpg",
+    "geo_location": {
+      "lat": 51.426989,
+      "lng": -0.309023,
+      "zoom": 10
+    },
+    "header_image_url": "http://www.eventrac.local/1537804765.jpg",
+    "organiser_terms": "I understand that entries are non refundable and non transferable, including cancellation in the event of circumstances that may arise beyond our control. If you use iPods/ MP3 players you do so at your own risk, over-ear bone conduction Aftershokz earphones are preferred for all our races.\n",
+    "platform_terms": ""
   },
   {
     "id": 60,
     "name": "Bewl Water",
     "description": "<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
     "url": "https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon",
-    "has_future_races": true
+    "has_future_races": true,
+    "location": "",
+    "img_url": "http://www.eventrac.local/59.jpg",
+    "geo_location": {
+      "lat": 51.426989,
+      "lng": -0.309023,
+      "zoom": 10
+    },
+    "header_image_url": "http://www.eventrac.local/1537804765.jpg",
+    "organiser_terms": "I understand that entries are non refundable and non transferable, including cancellation in the event of circumstances that may arise beyond our control. If you use iPods/ MP3 players you do so at your own risk, over-ear bone conduction Aftershokz earphones are preferred for all our races.\n",
+    "platform_terms": ""
   },
   {
     "id": 61,
     "name": "Bewl Water Ultra",
     "description": "<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
     "url": "https://www.eventrac.co.uk/listed-races/bewl-water-ultra",
-    "has_future_races": false
+    "has_future_races": false,
+    "location": "",
+    "img_url": "http://www.eventrac.local/59.jpg",
+    "geo_location": {
+      "lat": 51.426989,
+      "lng": -0.309023,
+      "zoom": 10
+    },
+    "header_image_url": "http://www.eventrac.local/1537804765.jpg",
+    "organiser_terms": "I understand that entries are non refundable and non transferable, including cancellation in the event of circumstances that may arise beyond our control. If you use iPods/ MP3 players you do so at your own risk, over-ear bone conduction Aftershokz earphones are preferred for all our races.\n",
+    "platform_terms": ""
   }
 ]
 ```
@@ -141,12 +171,19 @@ This endpoint retrieves all events for a given organiser.
 
 ### Request Parameters
 
-Parameter | Description --------- | ------- | ----------- ORGANISER_ID | The ID of the event organiser
+Parameter | Description
+--------- | ------- | -----------
+ORGANISER_ID | The ID of the event organiser
 
 ### Response
 
-Parameter | Description --------- | ------- | ----------- id | The ID of the event name | The Name of the event
-description | A description about the event url | The URL to the eventrac landing page has_future_races | Boolean
+Parameter | Description
+--------- | ------- | -----------
+id | The ID of the event
+name | The Name of the event
+description | A description about the event
+url | The URL to the eventrac landing page
+has_future_races | Boolean indicating if this event has any races in the future
 indicating if this event has any races in the future
 
 
@@ -174,50 +211,114 @@ curl "https://www.eventrac.co.uk/api/v3/events/<EVENT_ID>/races"
   {
     "id": 728,
     "name": "Half Marathon",
-    "capacity": 500,
+    "capacity": 300,
     "participant_count": 150,
-    "date": "2018-05-12T09:00:00+00:00",
-    "closing_date": "2018-05-07T23:00:00+00:00",
+    "date": "2018-06-10T08:00:00+00:00",
+    "closing_date": "2017-06-08T12:00:00+00:00",
+    "description": "This is my race description",
+    "created": "2021-02-16T00:00:00+00:00",
+    "modified": "2021-02-16T00:00:00+00:00",
+    "affiliations": [
+      "uk-athletics"
+    ],
+    "form_additions": [
+      {
+        "label": "Do you have any medical conditions?",
+        "id": 4841,
+        "mandatory": false,
+        "input_type": "text",
+        "select_options": []
+      },
+      {
+        "label": "What is your favourite colour?",
+        "id": 5815,
+        "mandatory": false,
+        "input_type": "select",
+        "select_options": [
+          {
+            "label": "Red",
+            "id": 10326
+          },
+          {
+            "label": "Green",
+            "id": 10327
+          },
+          {
+            "label": "Blue",
+            "id": 10328
+          }
+        ]
+      }
+    ],
     "event": {
-      "id": 60,
-      "name": "Bewl Water",
-      "url": "https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon",
-      "description": "<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
-      "has_future_races": true
+      "id": 100,
+      "name": "Whiteley Village Races",
+      "url": "https://www.eventrac.co.uk/listed-races/whiteley-races",
+      "description": "This is my event description",
+      "has_future_races": true,
+      "geo_location": {
+        "lat": 51.426989,
+        "lng": -0.309023,
+        "zoom": 10
+      },
+      "location": "Adventure park",
+      "img_url": "https://www.eventrac.co.uk/59.jpg",
+      "header_image_url": "https://www.eventrac.co.uk/1537804765.jpg",
+      "organiser_terms": "organiser terms\n and conditions",
+      "platform_terms": "eventrac terms and conditions"
     },
     "has_capacity": true,
     "status": "closed",
     "price": {
-      "amount": 3000,
+      "amount": 1800,
+      "affiliated_amount": 1600,
       "currency": "GBP",
-      "booking_fee": 150,
-      "booking_fee_paid_by": "participant"
+      "booking_fee": 83,
+      "booking_fee_paid_by": "organiser"
     },
-    "url": "https://www.eventrac.co.uk/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"
+    "category": "running",
+    "url": "https://www.eventrac.co.uk/e/my-event-123"
   },
   {
     "id": 729,
     "name": "Marathon",
-    "capacity": 500,
+    "capacity": 300,
     "participant_count": 150,
-    "date": "2018-05-12T08:00:00+00:00",
-    "closing_date": "2018-05-07T23:00:00+00:00",
+    "date": "2018-06-10T08:00:00+00:00",
+    "closing_date": "2017-06-08T12:00:00+00:00",
+    "description": "This is my race description",
+    "created": "2021-02-16T00:00:00+00:00",
+    "modified": "2021-02-16T00:00:00+00:00",
+    "affiliations": [],
+    "form_additions": [],
     "event": {
-      "id": 60,
-      "name": "Bewl Water",
-      "url": "https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon",
-      "description": "<p>A scenic summer run starting from the YMCA Hawker Centre....</p>",
-      "has_future_races": true
+      "id": 100,
+      "name": "Whiteley Village Races",
+      "url": "https://www.eventrac.co.uk/listed-races/whiteley-races",
+      "description": "This is my event description",
+      "has_future_races": true,
+      "geo_location": {
+        "lat": 51.426989,
+        "lng": -0.309023,
+        "zoom": 10
+      },
+      "location": "Adventure park",
+      "img_url": "https://www.eventrac.co.uk/59.jpg",
+      "header_image_url": "https://www.eventrac.co.uk/1537804765.jpg",
+      "organiser_terms": "organiser terms\n and conditions",
+      "platform_terms": "eventrac terms and conditions"
     },
     "has_capacity": true,
     "status": "closed",
     "price": {
-      "amount": 3800,
+      "amount": 1800,
+      "affiliated_amount": 1600,
       "currency": "GBP",
-      "booking_fee": 190,
-      "booking_fee_paid_by": "participant"
+      "booking_fee": 83,
+      "booking_fee_paid_by": "organiser"
     },
-    "url": "https://www.eventrac.co.uk/race-course-map/bewl-water-marathon-12-05-2018-08-00"
+    "category": "running",
+    "url": "https://www.eventrac.co.uk/e/my-event-123"
   }
 ]
 ```
@@ -230,11 +331,18 @@ This endpoint retrieves all races (in the future) for a given event
 
 ### Request Parameters
 
-Parameter | Description --------- | ------- | ----------- EVENT_ID | The ID of the event to retrieve
+Parameter | Description
+--------- | ------- | -----------
+EVENT_ID | The ID of the event to retrieve
 
 ### Response
 
-Parameter | Description --------- | ------- | ----------- data | An array of races (See getting an individual race)
+Parameter | Description
+--------- | ------- | -----------
+data | An array of races (See getting an individual race)
+
+
+
 
 ## Get a Specific Event
 
