@@ -280,55 +280,56 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the eventrac developer API. You can use our API to access Event/Race information and add Participants to a given Race.</p>
+<p>Welcome to the eventrac developer API. You can use our API to access Event/Race information and add Participants to a
+given Race.</p>
 
-<p>To help with development, a collection of API calls are available in postman.  This is using our sandbox environment.</p>
+<p>To help with development, a collection of API calls are available in postman. This is using our sandbox environment.</p>
 
 <p><a href="https://app.getpostman.com/run-collection/7b2e5dada17d7ae157fd"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 <p><strong>This is an in development API</strong></p>
 <h1 id='how-it-works'>How it works</h1>
-<p>This version of the eventrac API uses <a href="https://metacpan.org/pod/JSON::JSend">jSend</a> as the protocol to communicate between the client and the server
- An example response might look like (see right).</p>
+<p>This version of the eventrac API uses <a href="https://metacpan.org/pod/JSON::JSend">jSend</a> as the protocol to communicate
+between the client and the server An example response might look like (see right).</p>
 
 <blockquote>
 <p>A typical successful response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44362</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-01-01T00:00:00+00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-external-reference"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44362</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-01-01T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-external-reference"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>A typical response with validation errors:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation failed"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The provided value is invalid"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation failed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The provided value is invalid"</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='authentication'>Authentication</h1>
 <blockquote>
@@ -342,48 +343,80 @@ curl <span class="s2">"api_endpoint_here"</span>
 <p>Make sure to replace <code>yourapikey</code> with your API key.</p>
 </blockquote>
 
-<p>eventrac uses API keys to allow access to the API.  To receive an API key, please contact organiser.support@eventrac.co.uk</p>
+<p>eventrac uses API keys to allow access to the API. To receive an API key, please contact
+organiser.support@eventrac.co.uk</p>
 
-<p>eventrac expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>eventrac expects for the API key to be included in all API requests to the server in a header that looks like the
+following:</p>
 
 <p><code>Authorization: yourapikey</code></p>
 
 <aside class="notice">
 You must replace <code>yourapikey</code> with your personal API key.
 </aside>
-<h1 id='organisers'>Organisers</h1><h2 id='get-all-events-for-an-organiser'>Get All Events for an organiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events"</span>
+<h1 id='organisers'>Organisers</h1><h2 id='get-all-events-for-an-organiser'>Get All Events for an organiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v3/organisers/&lt;ORGANISER_ID&gt;/events"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON array of events, structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Thames Meander"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/thames-meander"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water Ultra"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-ultra"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thames Meander"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/listed-races/thames-meander"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eventrac.local/59.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"geo_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.426989</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.309023</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"header_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eventrac.local/1537804765.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organiser_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I understand that entries are non refundable and non transferable, including cancellation in the event of circumstances that may arise beyond our control. If you use iPods/ MP3 players you do so at your own risk, over-ear bone conduction Aftershokz earphones are preferred for all our races.</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eventrac.local/59.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"geo_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.426989</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.309023</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"header_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eventrac.local/1537804765.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organiser_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I understand that entries are non refundable and non transferable, including cancellation in the event of circumstances that may arise beyond our control. If you use iPods/ MP3 players you do so at your own risk, over-ear bone conduction Aftershokz earphones are preferred for all our races.</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bewl Water Ultra"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-ultra"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eventrac.local/59.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"geo_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.426989</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.309023</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"header_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eventrac.local/1537804765.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organiser_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I understand that entries are non refundable and non transferable, including cancellation in the event of circumstances that may arise beyond our control. If you use iPods/ MP3 players you do so at your own risk, over-ear bone conduction Aftershokz earphones are preferred for all our races.</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all events for a given organiser.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://www.eventrac.co.uk/api/v2/organisers/&lt;ORGANISER_ID&gt;/events</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v3/organisers/&lt;ORGANISER_ID&gt;/events</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -425,6 +458,8 @@ You must replace <code>yourapikey</code> with your personal API key.
 </tr>
 </tbody></table>
 
+<p>indicating if this event has any races in the future</p>
+
 <aside class="notice">
 Please email organiser.support@eventrac.co.uk for details of an organisers id
 </aside>
@@ -432,66 +467,130 @@ Please email organiser.support@eventrac.co.uk for details of an organisers id
 <aside class="notice">
 A "future race" is considered any race with a date in in the future
 </aside>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v3/events/&lt;EVENT_ID&gt;/races"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns a JSON array of race objects:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">728</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Half Marathon"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-05-12T09:00:00+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2018-05-07T23:00:00+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
-         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">728</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Half Marathon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-10T08:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-08T12:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is my race description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"affiliations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"uk-athletics"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"form_additions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you have any medical conditions?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4841</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"input_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"select_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
-         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"participant"</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your favourite colour?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5815</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"input_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"select_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10326</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10327</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10328</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whiteley Village Races"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/listed-races/whiteley-races"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is my event description"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geo_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.426989</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.309023</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/race-course-map/bewl-water-half-marathon-12-05-2018-09-00"</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">729</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Marathon"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-05-12T08:00:00+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2018-05-07T23:00:00+00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
-         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bewl Water"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/bewl-water-marathon-and-half-marathon"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"&lt;p&gt;A scenic summer run starting from the YMCA Hawker Centre....&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adventure park"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/59.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"header_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/1537804765.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"organiser_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organiser terms</span><span class="se">\n</span><span class="s2"> and conditions"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"platform_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventrac terms and conditions"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"affiliated_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1600</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organiser"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/e/my-event-123"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">729</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marathon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-10T08:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-08T12:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is my race description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"affiliations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"form_additions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whiteley Village Races"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/listed-races/whiteley-races"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is my event description"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geo_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.426989</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.309023</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
-         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3800</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">190</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"participant"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/race-course-map/bewl-water-marathon-12-05-2018-08-00"</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adventure park"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/59.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"header_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/1537804765.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"organiser_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organiser terms</span><span class="se">\n</span><span class="s2"> and conditions"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"platform_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventrac terms and conditions"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"affiliated_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1600</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organiser"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/e/my-event-123"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all races (in the future) for a given event</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://www.eventrac.co.uk/api/v2/events/&lt;EVENT_ID&gt;/races</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v3/events/&lt;EVENT_ID&gt;/races</code></p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -516,7 +615,7 @@ A "future race" is considered any race with a date in in the future
 <td>An array of races (See getting an individual race)</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-event'>Get a Specific Event</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/events/&lt;ID&gt;"</span>
+<h2 id='get-a-specific-event'>Get a Specific Event</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v3/events/&lt;ID&gt;"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
@@ -528,7 +627,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="warning">This endpoint has not yet been implemented</aside>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://www.eventrac.co.uk/api/v2/events/&lt;ID&gt;</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v3/events/&lt;ID&gt;</code></p>
 <h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -569,43 +668,89 @@ A "future race" is considered any race with a date in in the future
 <td>Boolean indicating if this event has any races in the future</td>
 </tr>
 </tbody></table>
-<h1 id='races'>Races</h1><h2 id='get-a-specific-race'>Get a Specific Race</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;"</span>
+<h1 id='races'>Races</h1><h2 id='get-a-specific-race'>Get a Specific Race</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v3/races/&lt;ID&gt;"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns a JSON race object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">851</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Whiteley Village 10Km"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"capacity"</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2018-06-10T08:00:00+00:00"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="s2">"2017-06-08T12:00:00+00:00"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;This is my race description&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"event"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Whiteley Village Races"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/listed-races/whiteley-races"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;This is my event description&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">1800</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="s2">"organiser"</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://www.eventrac.co.uk/race-course-map/whiteley-village-races-whiteley-village-10km-10-06-2018-08-00"</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">851</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whiteley Village 10Km"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"participant_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-10T08:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"closing_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-08T12:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is my race description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"affiliations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"uk-athletics"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"form_additions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you have any medical conditions?"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4841</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"input_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"select_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your favourite colour?"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5815</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"input_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"select_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10326</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10327</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10328</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whiteley Village Races"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/listed-races/whiteley-races"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is my event description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"has_future_races"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"geo_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.426989</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.309023</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adventure park"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/59.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"header_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/1537804765.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organiser_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organiser terms</span><span class="se">\n</span><span class="s2"> and conditions"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform_terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventrac terms and conditions"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"has_capacity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"affiliated_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1600</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"booking_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"booking_fee_paid_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organiser"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.eventrac.co.uk/e/my-event-123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific race</p>
 
 <aside class="warning">Attention should be given to has_capacity and the status.  These can be considered the criteria to enable new participants to enter</aside>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v3/races/&lt;ID&gt;</code></p>
 <h3 id='request-parameters-4'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -635,7 +780,7 @@ A "future race" is considered any race with a date in in the future
 </tr>
 <tr>
 <td>capacity</td>
-<td>The capacity of the race.  Once this is met <em>has_capacity</em> will be false</td>
+<td>The capacity of the race. Once this is met <em>has_capacity</em> will be false</td>
 </tr>
 <tr>
 <td>participant_count</td>
@@ -670,40 +815,38 @@ A "future race" is considered any race with a date in in the future
 <td>A price object describing the entry price and booking fees</td>
 </tr>
 <tr>
-<td></td>
 <td><strong>amount</strong> - the price of the race as advertised to the participant (without any booking fees)</td>
+<td></td>
 </tr>
 <tr>
-<td></td>
 <td><strong>currency</strong> - the currnecy of any fees</td>
+<td></td>
 </tr>
 <tr>
-<td></td>
 <td><strong>booking_fee</strong> - the eventrac booking fee</td>
-</tr>
-<tr>
 <td></td>
-<td><strong>booking_fee_paid_by</strong> - who pays the booking fee.  Can be either <em>organiser</em> or <em>participant</em>.  In the case of <em>participant</em>, this should be added to the amount.</td>
 </tr>
 <tr>
-<td>url</td>
-<td>A url to the eventrac landing page for this race</td>
+<td><strong>booking_fee_paid_by</strong> - who pays the booking fee. Can be either <em>organiser</em> or <em>participant</em>. In the case of *</td>
+<td></td>
 </tr>
 </tbody></table>
-<h1 id='participants'>Participants</h1><h2 id='retrieve-a-participant'>Retrieve a participant</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v2/partcipants/&lt;ID&gt;/&lt;EXTERNAL-REFERENCE&gt;"</span>
+
+<p>participant*, this should be added to the amount. url | A url to the eventrac landing page for this race</p>
+<h1 id='participants'>Participants</h1><h2 id='retrieve-a-participant'>Retrieve a participant</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.eventrac.co.uk/api/v3/partcipants/&lt;ID&gt;/&lt;EXTERNAL-REFERENCE&gt;"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns a JSON participant object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44287</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">756</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1986-05-04T00:00:00+00:00"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"5ac897c6dc7a10001596163b"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44287</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">756</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1986-05-04T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ac897c6dc7a10001596163b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -711,7 +854,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="warning">For privay reasons, the participant's address and contact details will not be returned from this endpoint</aside>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://www.eventrac.co.uk/api/v2/participants/&lt;EXTERNAL-REFERENCE&gt;</code></p>
+<p><code>GET https://www.eventrac.co.uk/api/v3/participants/&lt;EXTERNAL-REFERENCE&gt;</code></p>
 <h3 id='request-parameters-5'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -760,32 +903,44 @@ A "future race" is considered any race with a date in in the future
 <td>The gender of the participant</td>
 </tr>
 </tbody></table>
-<h2 id='add-a-single-participant-to-a-race'>Add a single Participant to a Race</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants"</span>
+<h2 id='add-a-single-participant-to-a-race'>Add a single Participant to a Race</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.eventrac.co.uk/api/v3/races/&lt;ID&gt;/participants"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
-  -d <span class="o">{</span><span class="s2">"race_id"</span>:123,<span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bird"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"123"</span><span class="o">}</span>
-
+  -d <span class="o">{</span><span class="s2">"email"</span>:<span class="s2">"demo@example.com"</span>,<span class="s2">"first_name"</span>:<span class="s2">"Roger"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bigs"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"my-reference"</span>,<span class="s2">"address_1"</span>:<span class="s2">"Some house"</span>,<span class="s2">"emergency_number"</span>:<span class="s2">"0798536245"</span>,<span class="s2">"emergency_name"</span>:<span class="s2">"Katherine"</span>,<span class="s2">"contact_number"</span>:<span class="s2">"01403256987"</span>,<span class="s2">"metadata"</span>:<span class="o">{</span><span class="s2">"key"</span>:<span class="s2">"value"</span>, <span class="s2">"browser"</span>:<span class="s2">"safari"</span><span class="o">}</span>,<span class="s2">"affiliations"</span>:<span class="o">{</span><span class="s2">"uk-athletics"</span>:<span class="s2">"8976542"</span><span class="o">}</span>,<span class="s2">"form_additions"</span>:[<span class="o">{</span><span class="s2">"id"</span>:<span class="s2">"4841"</span>,<span class="s2">"value"</span>:<span class="s2">"Nothing of note"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"id"</span>:<span class="s2">"5815"</span>,<span class="s2">"value"</span>:<span class="s2">"10326"</span><span class="o">}]}</span>
 </code></pre>
 <blockquote>
 <p>The above command returns a JSON participant object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44287</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">756</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Matt"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Woollard"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1985-01-20T00:00:00+00:00"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"my_reference_123"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_state"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">480955</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Katherine"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0798536245"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9099</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Roger"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bigs"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-01-13T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"form_additions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4841</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nothing of note"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5815</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10326</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"affiliations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"uk-athletics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8976542"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"profile_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some house"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01403256987"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -793,7 +948,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="notice">The participants address and contact details will only be returned upon a successful response</aside>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://www.eventrac.co.uk/api/v2/races/&lt;ID&gt;/participants</code></p>
+<p><code>POST https://www.eventrac.co.uk/api/v3/races/&lt;ID&gt;/participants</code></p>
 <h3 id='request-post-parameters'>Request (POST)  Parameters</h3>
 <table><thead>
 <tr>
@@ -830,12 +985,12 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>dob</td>
 <td>false</td>
-<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
+<td>The participants date of birth. Should be in format <strong>Y-m-d</strong></td>
 </tr>
 <tr>
 <td>gender</td>
 <td>false</td>
-<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
+<td>The participants gender. Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
 </tr>
 <tr>
 <td>address_1</td>
@@ -885,7 +1040,17 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>metadata</td>
 <td>false</td>
-<td>A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..</td>
+<td>A set of key/value pairs that you can attach to the participant object. This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..</td>
+</tr>
+<tr>
+<td>form_additions</td>
+<td>false</td>
+<td>Answers to custom questions (see race object)</td>
+</tr>
+<tr>
+<td>affiliations</td>
+<td>false</td>
+<td>Any affiliations (see race object for possible values)</td>
 </tr>
 </tbody></table>
 <h3 id='response-participant-object-2'>Response - Participant Object</h3>
@@ -964,7 +1129,7 @@ A "future race" is considered any race with a date in in the future
 <td>The contact number of the person to contact in case of emergency</td>
 </tr>
 </tbody></table>
-<h2 id='add-multiple-participants-to-race-s'>Add multiple Participants to Race(s)</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.eventrac.co.uk/api/v2/participants"</span>
+<h2 id='add-multiple-participants-to-race-s'>Add multiple Participants to Race(s)</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.eventrac.co.uk/api/v3/participants"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
   -d <span class="o">{</span><span class="s2">"participants"</span>:[<span class="o">{</span><span class="s2">"race_id"</span>:123,<span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bird"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"123"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"race_id"</span>:123,<span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Bird"</span>,<span class="s2">"gender"</span>:<span class="s2">"m"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-01-13"</span>,<span class="s2">"external_reference"</span>:<span class="s2">"123-1"</span>,<span class="s2">"address_zip_code"</span>:<span class="s2">"1234"</span>,<span class="s2">"metadata"</span>:<span class="o">{</span><span class="s2">"hello"</span>:<span class="s2">"world"</span>,<span class="s2">"another"</span>:<span class="s2">"day"</span><span class="o">}}]}</span>
 
@@ -973,71 +1138,84 @@ A "future race" is considered any race with a date in in the future
 <p>The json request object should look like this</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"participants"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1986-04-05"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123"</span><span class="w">
+  </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1986-04-05"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"browser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"safari"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">456</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Sarah"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Harding"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"f"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1990-01-13"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1222"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-   </span><span class="p">]</span><span class="w">
+      </span><span class="s2">"affiliations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"uk-athletics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8976542"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"form_additions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4841"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nothing of note"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5815"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10326"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sarah"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harding"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1990-01-13"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-1222"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>The above command returns a JSON participant object structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"hasErrors"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"participants"</span><span class="p">:[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"errors"</span><span class="p">:{</span><span class="w">
-               </span><span class="s2">"external_reference"</span><span class="p">:{</span><span class="w">
-                  </span><span class="s2">"unique"</span><span class="p">:</span><span class="s2">"The provided value is invalid"</span><span class="w">
-               </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44322</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"2018-06-15T00:00:00+00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"123-1222"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_state"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"address_country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="s2">"links"</span><span class="p">:[</span><span class="w">
-
-   </span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"hasErrors"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The provided value is invalid"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44322</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bird"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-15T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-1222"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <p>This endpoint adds a participant to a race</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://www.eventrac.co.uk/api/v2/races/participants</code></p>
+<p><code>POST https://www.eventrac.co.uk/api/v3/races/participants</code></p>
 
 <p>This endpoints expects and array of participants</p>
 <h3 id='request-post-parameters-2'>Request (POST) Parameters</h3>
@@ -1071,19 +1249,17 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>participants[0][dob]</td>
 <td>false</td>
-<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
+<td>The participants date of birth. Should be in format <strong>Y-m-d</strong></td>
 </tr>
 <tr>
 <td>participants[0][gender]</td>
 <td>false</td>
-<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
-</tr>
-<tr>
-<td>...</td>
-<td>false</td>
-<td>see Adding an individual participant for further options</td>
+<td>The participants gender. Should be one of <strong>f</strong> (female), <strong>m</strong> (male), **</td>
 </tr>
 </tbody></table>
+
+<p>nb** (non binary)
+... | false | see Adding an individual participant for further options</p>
 <h3 id='response-participant-object-3'>Response - Participant Object</h3>
 <table><thead>
 <tr>
@@ -1100,7 +1276,7 @@ A "future race" is considered any race with a date in in the future
 <td>An array of participants - See the participant response object</td>
 </tr>
 </tbody></table>
-<h2 id='update-a-participant'>Update a participant</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://www.eventrac.co.uk/api/v2/participants/&lt;EXTERNAL-REFERENCE&gt;"</span>
+<h2 id='update-a-participant'>Update a participant</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://www.eventrac.co.uk/api/v3/participants/&lt;EXTERNAL-REFERENCE&gt;"</span>
   -H <span class="s2">"Authorization: yourapikey"</span>
   -d <span class="o">{</span><span class="s2">"participant"</span>:<span class="o">{</span><span class="s2">"first_name"</span>:<span class="s2">"Aaron"</span>,<span class="s2">"last_name"</span>:<span class="s2">"Tweet"</span>,<span class="s2">"gender"</span>:<span class="s2">"f"</span>,<span class="s2">"dob"</span>:<span class="s2">"1992-05-14"</span>,<span class="s2">"address_1"</span>:<span class="s2">"lighthouse"</span><span class="o">}}</span>
 
@@ -1109,23 +1285,23 @@ A "future race" is considered any race with a date in in the future
 <p>The above command returns a JSON participant object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">44287</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"race_id"</span><span class="p">:</span><span class="mi">756</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Matt"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Woollard"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dob"</span><span class="p">:</span><span class="s2">"1985-01-20T00:00:00+00:00"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="s2">"my_reference_123"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">"m"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_state"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"address_country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44287</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">756</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matt"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woollard"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1985-01-20T00:00:00+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaron@eventrac.co.uk"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"external_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my_reference_123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emergency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emergency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -1133,7 +1309,7 @@ A "future race" is considered any race with a date in in the future
 
 <aside class="notice">The External Reference is required as proof of ownership.  Failure to provide an external reference will result in a 403</aside>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>PUT https://www.eventrac.co.uk/api/v2/participants/&lt;EXTERNAL-REFERENCE&gt;</code></p>
+<p><code>PUT https://www.eventrac.co.uk/api/v3/participants/&lt;EXTERNAL-REFERENCE&gt;</code></p>
 <h3 id='request-put-parameters'>Request (PUT)  Parameters</h3>
 <table><thead>
 <tr>
@@ -1165,12 +1341,12 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>dob</td>
 <td>false</td>
-<td>The participants date of birth.  Should be in format <strong>Y-m-d</strong></td>
+<td>The participants date of birth. Should be in format <strong>Y-m-d</strong></td>
 </tr>
 <tr>
 <td>gender</td>
 <td>false</td>
-<td>The participants gender.  Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
+<td>The participants gender. Should be one of <strong>f</strong> (female), <strong>m</strong> (male), <strong>nb</strong> (non binary)</td>
 </tr>
 <tr>
 <td>external_reference</td>
@@ -1225,7 +1401,7 @@ A "future race" is considered any race with a date in in the future
 <tr>
 <td>metadata</td>
 <td>false</td>
-<td>A set of key/value pairs that you can attach to the participant object.  This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..</td>
+<td>A set of key/value pairs that you can attach to the participant object. This can be useful for passing in additional entry form questions i.e. UKA Affiliation Number or a stripe transfer identifier etc..</td>
 </tr>
 </tbody></table>
 <h3 id='response-participant-object-4'>Response - Participant Object</h3>
